@@ -1,1 +1,1 @@
-# JS-RockPaperScissors
+This project is a game of RockPaperScissors in JS, played entorely in the console between the user and the computer.  
