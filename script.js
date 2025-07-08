@@ -1,6 +1,7 @@
  
 
-let Hscore, Cscore = 0;
+let Hscore = 0;
+let Cscore = 0;
 function getComputerChoice(){
 
     let x;
@@ -42,14 +43,14 @@ function playRound(Hchoice, Cchoice){
     if ((Hchoice === "scissors"  && Cchoice ===  "paper")||
     (Hchoice === "paper" && Cchoice === "rock") ||
     (Hchoice === "rock" && Cchoice === "scissors")){
-        message = "You won!" + Hchoice + "beats" + Cchoice +"!"
+        message = "You won! " + Hchoice + " beats " + Cchoice +"!"
         Hscore += 1;
 
 
     } else if(Hchoice === Cchoice){
         message = "It's a tie!"
     } else{ 
-        message = "You lost!" + Cchoice + "beats" + Hchoice +"!"
+        message = "You lost! " + Cchoice + " beats " + Hchoice +"!"
         Cscore +=1;
     }
 
@@ -57,12 +58,35 @@ function playRound(Hchoice, Cchoice){
 
 }
 
+function playGame(){
+    let i = 0;
 
-let Hchoice = getHumanChoice().toLowerCase();
-console.log("Hchoice:" + Hchoice);
+    while (i < 5){
+        let Hchoice = getHumanChoice().toLowerCase();
+        let Cchoice = getComputerChoice();
 
-let Cchoice = getComputerChoice();
-console.log("Cchoice:" + Cchoice);
+        console.log(playRound(Hchoice, Cchoice))
+        i += 1;
+    }
 
-console.log(playRound(Hchoice, Cchoice)) 
+    console.log("humanScore: " + Hscore);
+    console.log("computerScore: " + Cscore);
+
+    if (Hscore > Cscore){
+        console.log("You won!!")
+    } else if(Hscore == Cscore){
+        console.log("It's a tie!")
+    }
+    else{
+        console.log("Computer won!!")
+    } 
+
+}
+
+playGame();
+
+
+
+
+ 
 
