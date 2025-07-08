@@ -36,7 +36,26 @@ function getComputerChoice(){
 
 
 
+function playRound(Hchoice, Cchoice){
+   
+    let message;
+    if ((Hchoice === "scissors"  && Cchoice ===  "paper")||
+    (Hchoice === "paper" && Cchoice === "rock") ||
+    (Hchoice === "rock" && Cchoice === "scissors")){
+        message = "You won!" + Hchoice + "beats" + Cchoice +"!"
+        Hscore += 1;
 
+
+    } else if(Hchoice === Cchoice){
+        message = "It's a tie!"
+    } else{ 
+        message = "You lost!" + Cchoice + "beats" + Hchoice +"!"
+        Cscore +=1;
+    }
+
+    console.log(message)
+
+}
 
 
 let Hchoice = getHumanChoice().toLowerCase();
